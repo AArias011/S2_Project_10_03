@@ -20,16 +20,19 @@
 
 
 /* Transition Effects */
+/* This code sets the nav with the id of gameLinks that has a hypertext link nested into it to have a position of relative, a font color of white and it transitions the font color over a 0.5 second interval. */
 nav#gameLinks a {
     position: relative;
     color: white;
     transition: color 0.5s;
 }
 
+/* This code sets the nav with the id of gameLinks that has a hypertext link nested into it to have a font color of a certain rgb you give it when you hover over the nav list.  */
 nav#gameLinks a:hover {
     color: rgb(255, 194, 99);
 }
 
+/* This code sets the nav with the id of gameLinks that has a hypertext link nested into it to have an empty text string in the content property, have a position of absolute, have a top value of 100%, left value of 0px, a width of 0%, a height of 8px, a back that has a certain linear gradient, a border radius of 4px, an opacity of 0 and lastly a transition that brings the opacity at a 0.5 second interval and a width at the 0.5 second interval.  */
 nav#gameLinks a::after {
     content: "";
     position: absolute;
@@ -43,32 +46,40 @@ nav#gameLinks a::after {
     transition: opacity 0.5s, width 0.5s;
 }
 
+/* This code sets the nav with the id of gameLinks that has a hypertext link nested into it to have an opacity of 1 and a width of 100% when you hover it. */
 nav#gameLinks a:hover::after {
     opacity: 1;
     width: 100%;
 }
 
 /* Sprite Styles */
+/* This code sets the div with the class of sprite to have a position of absolute. */
 div.sprite {
     position: absolute;
 }
 
+/* This code affects the div with the id of bat to have a width of 40px, a height of 50px, top value of 100px, a left value of -50px, a background with a certian background url you give it to have no tiling and sized to cover the background. Lastly theres an animation of playSprite  to have an interval of 2 seconds, a delay of 8 seconds, a steps value of 39 to loop infinitley, then theres another animation of flyright with a interval of 3.5 seconds and a delay of 2 seconds with a linear timing and an infinite loop. */
 div#bat {
     width: 40px;
     height: 50px;
     top: 100px;
     left: -50px;
     background: url(paa_bat.png)left center/ cover no-repeat;
+    animation: playSprite 2s 8s steps(39) infinite, flyRight 3.5S 2s linear infinite;
 }
 
+/* This code affects the div with the id of bat to have a width of 35px, a height of 35px, top value of 60px, a left value of -50px, a background with a certian background url you give it to have no tiling and sized to cover the background. Lastly theres an animation of playSprite  to have an interval of 1 seconds, a delay of 3 seconds, a steps value of 33 to loop infinitley, then theres another animation of flyright with a interval of 6 seconds and a delay of 2 seconds with a linear timing and an infinite loop. */
 div#butterfly {
     width: 35px;
     height: 35px;
     top: 60px;
     left: -50px;
     background: url(paa_bfly.png)left center/ cover no-repeat;
+    animation: playSprite 1s 3s steps(33) infinite, flyRight 6s 2s linear infinite;
+    transition: cubic-bezier(0, 1, 0.73, 0);
 }
 
+/* This code affects the div with the id of bat to have a width of 280px, a height of 260px, bottom value of 10px, a right value of 10px, a background with a certian background url you give it to have no tiling and sized to cover the background. Lastly theres an animation of playSprite  to have an interval of 3.5 seconds, a delay of 4 seconds, a steps value of 27 to loop infinitley. */
 div#fox {
     width: 280px;
     height: 260px;
@@ -76,19 +87,18 @@ div#fox {
     right: 10px;
     background: url(paa_fox.png)left center/ cover no-repeat;
     animation: playSprite 3.5s 4s steps(27) infinite;
-
 }
 
 
 /* Animation Styles */
+/* This code makes a key frame to affect the playSprite animation, and at 100% it has a background position to the right and in the center. */
 @keyframes playSprite {
-    0% {}
-
     100% {
         background-position: right center;
     }
 }
 
+/* This code makes a key frame to affect the flyRight animation, that at 25% has a top value of 150px, at 50% has a top of 55px, at 65% has a top of 120px, at 90% has a top of 50px and at 100% has a top of 80px and a left of 100%. */
 @keyframes flyRight {
 
     25% {
